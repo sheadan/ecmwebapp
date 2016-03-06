@@ -1,0 +1,243 @@
+<div class="container">
+
+    <form class="form-vertical">
+
+      <!--
+        /
+        /* Step 1
+        /
+      -->
+      <div class="row">
+
+        <h3 class="text-center">Step 1</h3>
+
+        <div class="form-group text-center">
+
+          <label class="control-label" for="daqDev">Select device(s) for data acquisition:</label>
+
+          <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+              <select class="form-control" multiple id="daqDev">
+                <option value="dev1">Device 1</option>
+                <option value="dev2">Device 2</option>
+                <option value="dev3">Device 3</option>
+                <option value="null"></option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!--
+        /
+        /* Step 2
+        /
+      -->
+      <div class="row">
+
+        <h3 class="text-center">Step 2</h3>
+
+        <div class="form-group text-center">
+
+          <label class="control-label" for="daqDev">Choose protocol to send to device(s):</label>
+
+          <div class="row">
+            <section ng-controller="TabController as tab">
+              <div class="btn-group btn-group-justified">
+                <div class="btn-group">
+                    <button type="button" ng-class="tab.isSet(1) ? 'btn btn-success' : 'btn btn-info'" ng-click="tab.setTab(1)">
+                      Cyclic Voltammogram
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" ng-class="tab.isSet(2) ? 'btn btn-success' : 'btn btn-info'" ng-click="tab.setTab(2)">
+                      Chronoamperometry
+                    </button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" ng-class="tab.isSet(3) ? 'btn btn-success' : 'btn btn-info'" ng-click="tab.setTab(3)">
+                      Electrochemical Impedance Spectroscopy
+                    </button>
+                  </div>
+              </div>
+              <br>
+
+
+
+          <div ng-show="tab.isSet(1)" class="col-sm-8 col-sm-offset-2">
+
+    <!-- this all needs to be shifted to JS -->
+
+            <div class="row">
+
+              <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+                <label class="control-label" for="startV">Starting Potential:</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="0" type="number" id="startV" value="" />
+                  <span class="input-group-addon">Volts</span>
+                </div>
+              </div>
+
+              <div class="form-group has-warning has-feedback col-sm-4">
+                <label class="control-label" for="maxV">Max Potential:</label>
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="-5V to +5V" id="maxV" value="" />
+                  <span class="input-group-addon">Volts</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row">
+
+              <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+                <label class="control-label" for="minV">Min Potential:</label>
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="-5V to +5V" id="minV" value="" />
+                  <span class="input-group-addon">Volts</span>
+                </div>
+              </div>
+
+              <div class="form-group has-warning has-feedback col-sm-4">
+                <label class="control-label" for="rate">Sweep Rate:</label>
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="0.001-10" id="rate" value="" />
+                  <span class="input-group-addon">V/s</span>
+                </div>
+              </div>
+
+            </div>
+
+        <div class="row">
+
+          <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+            <label class="control-label" for="numCycles">Number of Cycles:</label>
+            <div class="input-group">
+              <input class="form-control" type="number" placeholder="1" id="numCycles" value="" />
+              <span class="input-group-addon">Cycles</span>
+            </div>
+          </div>
+
+          <div class="form-group has-warning has-feedback col-sm-4">
+            <label class="control-label" for="rate">Sample Rate:</label>
+            <div class="input-group">
+              <input class="form-control" type="text" placeholder="0.1-1000" id="rate" value="" />
+              <span class="input-group-addon">Hz</span>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+        <div ng-show="tab.isSet(2)">
+          <h4>Coming soon!</h4>
+        </div>
+
+        <div ng-show="tab.isSet(3)">
+          <h4>Coming soon!</h4>
+        </div>
+      </section>
+
+      </div>
+
+      <br>
+
+
+      <!--
+        /
+        /* Step 3
+        /
+      -->
+      <div class="row">
+
+        <h3 class="text-center">Step 3</h3>
+
+        <div class="row">
+
+          <label class="control-label" for="daqDev">Enter identifying name for data to be saved with:</label>
+
+          <div class="form-group has-warning has-feedback">
+              <div class="input-group col-sm-4 col-sm-offset-4">
+                <input class="form-control" type="text" placeholder="File name" id="fileName" value="" />
+              </div>
+              <div>All files are saved with date, time, and protocol information.</div>
+          </div>
+        </div>
+      </div>
+
+
+      <!--
+        /
+        /* Submit Button 3
+        /
+      -->
+
+        <div class="form-group">
+          <div class="col-sm-6 col-sm-offset-3">
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Collect Data!" />
+          </div>
+        </div>
+      </div>
+
+    </form>
+</div>
+
+<!-- examples from old form
+</div>
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="region">Region:</label>
+  <div class="col-sm-8">
+    <input class="form-control" type="text" id="region" value="" placeholder="(e.g. Egypt)" />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="divedate">Date:</label>
+  <div class="col-sm-3">
+    <input class="form-control" type="date" id="divedate" value="" />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="depth">Max depth (feet):</label>
+  <div class="col-sm-2">
+    <div class="input-group">
+    <input class="form-control" type="number" id="depth" value="" />
+    <span class="input-group-addon">feet</span>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-2 control-label" for="bottomtime">Bottom time (minutes):</label>
+  <div class="col-sm-2">
+    <div class="input-group">
+    <input class="form-control" type="number" id="bottomtime" value="" />
+    <span class="input-group-addon">mins</span>
+  </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <div class="col-sm-2 col-sm-offset-2">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="nightdive" />
+        Nightdive
+      </label>
+    </div>
+  </div>
+
+</div>
+
+
+      <div class="form-group">
+        <label class="col-sm-2 control-label" for="comment">Comment:</label>
+        <div class="col-sm-8">
+          <textarea class="form-control" rows="3" id="comment"></textarea>
+        </div>
+      </div>
+-->
