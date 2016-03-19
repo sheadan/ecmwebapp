@@ -1,16 +1,18 @@
 {
-  "name": "web",
-  "version": "1.0.0",
-  "description": "AngularJS Tutorial 1 ====================",
-  "main": "index.js",
+  "name": "ecmWebApp",
+  "version": "0.1.0",
+  "description": "EC Meeseeks webapp for EIC, BPC UW",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "des1",
+  "license": "BSD",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-route": "^1.5.0",
+    "angular-chart": "^0.9.0",
+    "Chart":"2.0.0",
     "bootstrap": "^3.3.6",
     "express": "^4.13.4",
     "jquery": "^2.2.0"

@@ -1,0 +1,17 @@
+<!--- mongodb port 27017 ---!>
+
+{
+  "Values": [
+    {
+      "Experiment" : "Cyclic Voltammetry",
+      "Parameters" : [
+        {
+
+        }
+        ],
+      "id": 'Number'
+    }
+  ]
+  "Experiment":"Cyclic Voltammetry",
+
+}

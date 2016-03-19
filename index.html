@@ -22,6 +22,16 @@
 
     <!-- Our Website CSS Styles -->
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="node_modules/angular-chart.js/dist/angular-chart.css">
+
+    <!-- import dependencies jquery, bootstrap, angular, angular route -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/node_modules/angular/angular.min.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/chart.js/Chart.js"></script>
+    <script src="/node_modules/angular-chart.js/dist/angular-chart.js"></script>
+
 
 </head>
 <body ng-app="ecmWebApp">
@@ -35,14 +45,12 @@
 <div ng-view></div>
 <div ng-include='"templates/footer.html"'></div>
 
-<!-- import dependencies jquery, bootstrap, angular, angular route -->
-<script src="/node_modules/jquery/dist/jquery.min.js"></script>
-<script src="/js/bootstrap.js"></script>
-<script src="/node_modules/angular/angular.min.js"></script>
-<script src="/node_modules/angular-route/angular-route.js"></script>
-
 <!-- Our Website Javascripts -->
 <script src="js/main.js"></script>
 
+
+
+
 </body>
+
 </html>
