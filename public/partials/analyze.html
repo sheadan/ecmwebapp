@@ -1,0 +1,74 @@
+<div class="container">
+
+      <!--
+        /
+        /* Data Analysis
+        /
+      -->
+
+      <div class="row">
+        <section ng-controller="TabController as tabAD">
+            <ul class="nav nav-pills">
+              <li ng-class="{ active:tabAD.isSet(1) }">
+                <a href="" ng-click="tabAD.setTab(1)">Select Data Set</a>
+              </li>
+              <li ng-class="{ active:tabAD.isSet(2) }">
+                <a href="" ng-click="tabAD.setTab(2)">Data Analyzer</a>
+              </li>
+            </ul>
+            <br>
+
+
+
+            <div ng-show="tabAD.isSet(1)" class="col-sm-8 col-sm-offset-2">
+              <section ng-controller="analysisCtrlr">
+                <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th></th>
+                          <th>#</th>
+                          <th>File</th>
+                          <th>startV</th>
+                          <th>minV</th>
+                          <th>maxV</th>
+                          <th>sweepRate</th>
+                          <th>cycles</th>
+                          <th>sampleRate</th>
+                      </tr>
+                  </thead>
+                  <tbody ng-repeat="experiment in experiments" ng-switch on="isSelExp(experiment)" ng-click="selData(experiment, $index)">
+                      <tr ng-class="{sel: selIdx == $index}">
+                          <td><input type="checkbox"></td>
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ experiment.name }}</td>
+                          <td>{{ experiment.params.startV }}</td>
+                          <td>{{ experiment.params.minV }}</td>
+                          <td>{{ experiment.params.maxV }}</td>
+                          <td>{{ experiment.params.sweepRate }}</td>
+                          <td>{{ experiment.params.cycles }}</td>
+                          <td>{{ experiment.params.sampleRate }}</td>
+                      </tr>
+                  </tbody>
+                </table>
+              </section>
+            </div>
+
+    <!-- Tab 2 -->
+          <div ng-show="tabAD.isSet(2)">
+            <section ng-controller="LineCtrl as line" class="col-sm-6 col-sm-offset-3">
+              <canvas id="line" class="chart chart-line" chart-data="data"
+                chart-labels="labels" chart-legend="true" chart-series="series"
+                chart-click="onClick">
+              </canvas>
+            </section>
+          </div>
+
+        </section>
+        </div>
+</div>
+
+<!--
+      </section>
+
+      </div>
+-->

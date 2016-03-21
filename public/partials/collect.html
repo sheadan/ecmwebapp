@@ -1,0 +1,90 @@
+<div ng-app="ecmWebApp" ng-controller="collectController" class="container">
+
+    <form>
+
+      <!--  Step 1: Device Selection -->
+      <div class="row">
+        <h3 class="text-center">Step 1</h3>
+
+        <fieldset class="form-group col-sm-8 col-sm-offset-2">
+          <label for="selectedDevice">Select a device:</label>
+          <select class="form-control" ng-model="formData.device" ng-change="checkDevice()">
+            <option value="dev1">Device 1</option>
+            <option value="dev2">Device 2</option>
+            <option value="dev3">Device 3</option>
+            <option value="null"></option>
+          </select>
+        </fieldset>
+      </div>
+      <br />
+
+
+      <!-- Step 2: Protocol Selection -->
+      <div class="row" ng-show="ShowStep2">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h3 class="text-center">Step 2</h3>
+
+          <fieldset class="form-group">
+            <label for="selectedProtocol">Choose a device protocol:</label>
+            <select class="form-control" ng-model="formData.protocol" ng-change="checkProtocol()">
+              <option value=""></option>
+              <option value="cv">Cyclic Voltammogram</option>
+              <option value="ca">Chronoamperometry</option>
+              <option value="eis">Electrochemical Impedance Spectroscopy</option>
+            </select>
+          </fieldset>
+
+          <br />
+
+          <div ng-switch="formData.protocol">
+            <div ng-switch-when="cv">
+              <div ng-include='"partials/experiments/cyclicVoltammetry.html"'>
+              </div>
+            </div>
+            <div ng-switch-when="ca">
+              <h4>Coming soon!</h4>
+            </div>
+            <div ng-switch-when="eis">
+              <h4>Coming soon!</h4>
+            </div>
+          </div>
+
+          <br />
+        </div>
+      </div>
+
+
+
+      <!-- Step 3: Save Name -->
+      <div class="row" ng-show="ShowStep3">
+
+        <div class="col-sm-8 col-sm-offset-2">
+
+          <h3 class="text-center">Step 3</h3>
+
+          <fieldset class="form-group">
+            <label for="dataFile">Enter identifying name for data</label>
+            <input type="text" class="form-control" id="dataFile" placeholder="Enter data file name" ng-model="formData.dataName" ng-change="checkSaveName()">
+            <small class="text-muted">All files are saved with date, time, and protocol information.</small>
+          </fieldset>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Submit Button -->
+      <div class="row" ng-show="ShowSubmit">
+
+        <div class="form-group col-sm-8 col-sm-offset-2">
+
+            <button type="submit" class="btn btn-lg btn-primary center-block" ng-click="createExp()">Collect Data!</button>
+
+        </div>
+
+      </div>
+
+    </div>
+    </form>
+</div>

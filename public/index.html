@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+
+    <!-- Meta-Information -->
+    <title>EC Meeseeks</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="EC Meeseeks">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Linked Stylesheets -->
+    <link rel="stylesheet" href="css/bootstrap2.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="node_modules/angular-chart.js/dist/angular-chart.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- import js dependencies-->
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/chart.js/Chart.js"></script>
+    <script src="node_modules/angular-chart.js/dist/angular-chart.js"></script>
+
+    <!-- Our Website Javascripts -->
+    <script src="js/services/experiments.js"></script>
+    <script src="js/config/routeConfig.js"></script>
+    <script src="js/controllers/collect.js"></script>
+    <script src="js/controllers/analyze.js"></script>
+    <script src="js/controllers/fileScanner.js"></script>
+    <script src="js/controllers/lineCtrlr.js"></script>
+    <script src="js/controllers/pageCtrlr.js"></script>
+    <script src="js/controllers/tabs.js"></script>
+
+
+</head>
+<body ng-app="ecmWebApp">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Our Website Content Goes Here -->
+<div ng-include='"templates/header.html"'></div>
+<br /> <br />
+<div ng-view></div>
+<br /> <br />
+<div ng-include='"templates/footer.html"'></div>
+
+<!-- Our Website Javascripts -->
+<script src="js/main.js"></script>
+
+
+
+
+</body>
+
+</html>
