@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-sm-7">
+    <nvd3 options="options" data="exampledata"></nvd3>
+  </div>
+
+  <div class="col-sm-5 col-sm-offset-1">
+    <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>File</th>
+              <th>Starting Potential</th>
+              <th>Maximum Potential</th>
+              <th>Minimum Potential</th>
+              <th>Sweep Rate</th>
+              <th>Cycles</th>
+              <th>Sampling Rate</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>{{ selected_data.name }}</td>
+              <td>{{ selected_data.params.startV }}</td>
+              <td>{{ selected_data.params.maxV }}</td>
+              <td>{{ selected_data.params.minV }}</td>
+              <td>{{ selected_data.params.sweepRate }}</td>
+              <td>{{ selected_data.params.cycles }}</td>
+              <td>{{ selected_data.params.sampleRate }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

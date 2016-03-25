@@ -6,23 +6,20 @@ angular.module('routeConfig', ['ngRoute'])
         $routeProvider
           // Home
           .when("/", {
-            templateUrl : "partials/home.html",
-            controller : "PageCtrl"
+            templateUrl : "partials/home.html"
           })
           // Pages
           .when("/info", {
-            templateUrl : "partials/info.html",
-            controller : "PageCtrl"})
+            templateUrl : "partials/info.html"
+          })
           .when("/collect", {
-            templateUrl: "partials/collect.html",
-            controller: "collectController"
+            templateUrl: "partials/collect.html"
           })
           .when("/analyze", {
-            templateUrl: "partials/analyze.html",
-            controller: "PageCtrl"
+            templateUrl: "partials/analyze.html"
           })
           // else 404
           .otherwise("/404", {
-            templateUrl: "partials/404.html",
-            controller: "PageCtrl"});
+            templateUrl: "partials/404.html"
+          });
       }]);

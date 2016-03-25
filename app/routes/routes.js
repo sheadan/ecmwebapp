@@ -1,7 +1,16 @@
 // app/routes.js
+var PythonShell = require('python-shell');
 
 // load the CV Experiment model
 var cvExp = require('../models/cvExp');
+
+// options for pythonshell
+var options = {
+  mode: 'text', //can be json or binary, too
+  pythonPath: 'path/to/python',
+  scriptPath: 'path/to/my/scripts',
+  args: ['idvalue']
+};
 
 // expose the routes to our app with module.exports
 module.exports = function(app) {
@@ -26,6 +35,7 @@ module.exports = function(app) {
     // create a  CV experiment, information comes from AJAX $http service POST request from Angular
         cvExp.create({
             name : req.body.dataName,
+            date : Date.now(),
             params: {
               startV : req.body.params.startV,
               maxV : req.body.params.maxV,
@@ -33,6 +43,11 @@ module.exports = function(app) {
               sweepRate : req.body.params.sweepRate,
               cycles : req.body.params.cycles,
               sampleRate : req.body.params.sampleRate
+            },
+            data : {
+              V : [],
+              I : [],
+              t : []
             },
             done : false
         }, function(err, experiments) {
@@ -46,7 +61,13 @@ module.exports = function(app) {
                 res.json(experiments);
             });
         });
-
+/*
+        PythonShell.run('my_script.py', options, function (err, results) {
+          if (err) throw err;
+          // results is an array consisting of messages collected during execution
+          console.log('results: %j', results);
+        });
+*/
     });
 
     // delete a  CV experiments

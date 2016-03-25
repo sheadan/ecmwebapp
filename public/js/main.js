@@ -3,13 +3,15 @@
  */
 angular.module('ecmWebApp', [
   'routeConfig',
-  'fileScannerController',
-  'lineCtrlr',
-  'pageCtrlr',
   'tabsController',
   'collectFormController',
-  'analyzeController',
+  'analyzeCtrlr',
+  'InfoController',
+  'hardware_info_serv',
+  'software_info_serv',
   'experimentService',
   'ngRoute',
-  'chart.js'
+  'ngTable',
+  'sorterDirective',
+  'nvd3'
 ]);

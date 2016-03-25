@@ -1,0 +1,32 @@
+{
+  "name": "ecmWebApp",
+  "description": "EC Meeseeks webapp for EIC, BPC UW",
+  "main": "server.js",
+  "authors": [
+    "des1"
+  ],
+  "license": "BSD",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "^3.5.16",
+    "nvd3": "^1.8.2",
+    "angularjs-nvd3-directives": "^0.0.7",
+    "jquery-ui": "^1.11.4",
+    "angular-nvd3": "^1.0.5"
+  },
+  "resolutions": {
+    "d3": "^3.4.4",
+    "nvd3": "^1.8.2"
+  }
+}

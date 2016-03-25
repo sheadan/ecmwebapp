@@ -1,10 +1,8 @@
-<div class="container">
+<div class="container" ng-controller="analysisCtrlr">
 
-      <!--
-        /
-        /* Data Analysis
-        /
-      -->
+      <!-- Tab navigation for analyzer
+        not a huge fan of this but OK for now...
+         -->
 
       <div class="row">
         <section ng-controller="TabController as tabAD">
@@ -19,56 +17,16 @@
             <br>
 
 
-
+    <!-- Data selection tab -->
             <div ng-show="tabAD.isSet(1)" class="col-sm-8 col-sm-offset-2">
-              <section ng-controller="analysisCtrlr">
-                <table class="table table-hover">
-                  <thead>
-                      <tr>
-                          <th></th>
-                          <th>#</th>
-                          <th>File</th>
-                          <th>startV</th>
-                          <th>minV</th>
-                          <th>maxV</th>
-                          <th>sweepRate</th>
-                          <th>cycles</th>
-                          <th>sampleRate</th>
-                      </tr>
-                  </thead>
-                  <tbody ng-repeat="experiment in experiments" ng-switch on="isSelExp(experiment)" ng-click="selData(experiment, $index)">
-                      <tr ng-class="{sel: selIdx == $index}">
-                          <td><input type="checkbox"></td>
-                          <td>{{ $index + 1 }}</td>
-                          <td>{{ experiment.name }}</td>
-                          <td>{{ experiment.params.startV }}</td>
-                          <td>{{ experiment.params.minV }}</td>
-                          <td>{{ experiment.params.maxV }}</td>
-                          <td>{{ experiment.params.sweepRate }}</td>
-                          <td>{{ experiment.params.cycles }}</td>
-                          <td>{{ experiment.params.sampleRate }}</td>
-                      </tr>
-                  </tbody>
-                </table>
-              </section>
+              <div ng-include='"partials/analyze/selectData.html"'></div>
             </div>
 
-    <!-- Tab 2 -->
-          <div ng-show="tabAD.isSet(2)">
-            <section ng-controller="LineCtrl as line" class="col-sm-6 col-sm-offset-3">
-              <canvas id="line" class="chart chart-line" chart-data="data"
-                chart-labels="labels" chart-legend="true" chart-series="series"
-                chart-click="onClick">
-              </canvas>
-            </section>
+    <!-- Data analysis tab -->
+          <div ng-show="tabAD.isSet(2)"  class="col-sm-10 col-sm-offset-1">
+              <div ng-include='"partials/analyze/analyzeData.html"'></div>
           </div>
 
         </section>
-        </div>
-</div>
-
-<!--
-      </section>
-
       </div>
--->
+</div>

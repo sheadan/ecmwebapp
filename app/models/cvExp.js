@@ -14,7 +14,7 @@ machineValues = {
 var cvExpSchema = new mongoose.Schema({
 
   name : String,
-
+  date : Date,
   params: {
      startV : Number,
      maxV : Number,
