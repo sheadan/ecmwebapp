@@ -1,18 +1,21 @@
 // js/controllers/main.js
-angular.module('InfoController', ['ngTable'])
+angular.module('InfoController', [])
 
     // register the info controller
-    .controller('infoCtrlr', function( $scope, hardware_info, software_info, NgTableParams ) {
+    .controller('infoCtrlr', function( $scope ) {
 
-        $scope.hardware = hardware_info;
-        $scope.hardware = software_info;
+        $scope.hardware = {
+                name : "EC Meeseeks Demo Hardware",
+                version : "0.5.2s",
+                date: "28-March-2016",
+                experiments : "Cyclic Voltammetry, Chronoamperometry"
+              };
 
-        var self = this;
-        $scope.data = [
-          {name: "Moroni", age: 50},
-          {name: "Bromono", age: 14},
-          {name: "LOLOLO", age: 123}
-          ];
+        $scope.software = {
+                name : "EC Meeseeks Demo Software",
+                version : "0.1.2",
+                authors : "Dan Shea",
+                date: "28-March-2016"
+              };
 
-        self.tableParams = new NgTableParams({}, { dataset: $scope.data});
     });

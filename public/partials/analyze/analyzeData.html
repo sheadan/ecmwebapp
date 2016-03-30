@@ -1,10 +1,12 @@
+<br />
+
 <div class="row">
 
-  <div class="col-sm-7">
-    <nvd3 options="options" data="exampledata"></nvd3>
+  <div class="col-sm-10 col-sm-offset-1">
+    <nvd3 options="options" data="plotData"></nvd3>
   </div>
 
-  <div class="col-sm-5 col-sm-offset-1">
+  <div class="col-sm-8 col-sm-offset-2">
     <table class="table table-hover">
       <thead>
           <tr>
@@ -17,15 +19,15 @@
               <th>Sampling Rate</th>
           </tr>
       </thead>
-      <tbody>
+      <tbody ng-repeat="dataset in selected_data">
           <tr>
-              <td>{{ selected_data.name }}</td>
-              <td>{{ selected_data.params.startV }}</td>
-              <td>{{ selected_data.params.maxV }}</td>
-              <td>{{ selected_data.params.minV }}</td>
-              <td>{{ selected_data.params.sweepRate }}</td>
-              <td>{{ selected_data.params.cycles }}</td>
-              <td>{{ selected_data.params.sampleRate }}</td>
+              <td>{{ dataset.name }}</td>
+              <td>{{ dataset.params.startV }}</td>
+              <td>{{ dataset.params.maxV }}</td>
+              <td>{{ dataset.params.minV }}</td>
+              <td>{{ dataset.params.sweepRate }}</td>
+              <td>{{ dataset.params.cycles }}</td>
+              <td>{{ dataset.params.sampleRate }}</td>
           </tr>
       </tbody>
     </table>

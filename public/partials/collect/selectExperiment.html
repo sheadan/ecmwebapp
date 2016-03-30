@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1">
+    <h3 class="text-center">Step 2</h3>
+
+    <fieldset class="form-group">
+      <label for="selectedProtocol">Choose a device protocol:</label>
+      <select class="form-control" ng-model="formData.protocol" ng-change="checkProtocol()">
+        <option value=""></option>
+        <option value="cv">Cyclic Voltammogram</option>
+        <option value="ca">Chronoamperometry</option>
+        <option value="eis">Electrochemical Impedance Spectroscopy</option>
+      </select>
+    </fieldset>
+
+    <br />
+
+    <div ng-switch="formData.protocol">
+      <div ng-switch-when="cv">
+        <div ng-include='"partials/collect/cyclicVoltammetry.html"'>
+        </div>
+      </div>
+      <div ng-switch-when="ca">
+        <h4>Coming soon!</h4>
+      </div>
+      <div ng-switch-when="eis">
+        <h4>Coming soon!</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-3 col-sm-offset-1">
+    <button class="btn btn-block btn-info">
+      <a ui-sref="collect.device">
+        Select device(s)
+        <span class="glyphicon glyphicon-circle-arrow-left"></span>
+      </a>
+    </button>
+    <br />
+  </div>
+
+  <div class="col-sm-6 col-sm-offset-1">
+    <button class="btn btn-block btn-info" ng-disabled="!showStep2" ui-sref="collect.submit">
+        Choose a save name
+        <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </button>
+    <br />
+  </div>
+
+<br />
+
+</div>

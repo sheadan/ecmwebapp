@@ -1,21 +1,46 @@
-<div ng-app="ecmWebApp" ng-controller='infoCtrlr' class="container">
+<div ng-controller='infoCtrlr' class="container">
 
-<br />
-<br />
-
-  <div class="row">
-      <div class="col-lg-12">
-          <table ng-table="vm.tableParams" class="table" show-filter="true">
-              <tr ng-repeat="user in data">
-                  <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
-                      {{user.name}}</td>
-                  <td title="'Age'" filter="{ age: 'number'}" sortable="'age'">
-                      {{user.age}}</td>
-              </tr>
-          </table>
-      </div>
+  <div class="col-sm-5 col-sm-offset-1">
+    <h2> Software Information </h2>
+    <table class="table table-hover">
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>Version</th>
+              <th>Date</th>
+              <th>Authors</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>{{ software.name }}</td>
+              <td>{{ software.version }}</td>
+              <td>{{ software.date }}</td>
+              <td>{{ software.authors }}</td>
+          </tr>
+      </tbody>
+    </table>
   </div>
 
-<!-- etc., more information about the company…. -->
-
+  <div class="col-sm-5">
+    <h2> Hardware Information </h2>
+    <table class="table table-hover">
+      <thead>
+          <tr>
+            <th>Name</th>
+            <th>Version</th>
+            <th>Date</th>
+            <th>Experiments</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            <td>{{ hardware.name }}</td>
+            <td>{{ hardware.version }}</td>
+            <td>{{ hardware.date }}</td>
+            <td>{{ hardware.experiments }}</td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

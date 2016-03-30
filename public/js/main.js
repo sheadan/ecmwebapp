@@ -2,16 +2,16 @@
  * Main AngularJS Web Application
  */
 angular.module('ecmWebApp', [
-  'routeConfig',
+  'ui.router',
+  'routerConfig',
   'tabsController',
   'collectFormController',
   'analyzeCtrlr',
   'InfoController',
-  'hardware_info_serv',
-  'software_info_serv',
   'experimentService',
-  'ngRoute',
   'ngTable',
   'sorterDirective',
-  'nvd3'
+  'nvd3',
+  'ngAnimate',
+  'ui.bootstrap'
 ]);

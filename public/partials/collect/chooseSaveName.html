@@ -1,0 +1,38 @@
+<div class="row">
+
+    <div class="col-sm-10 col-sm-offset-1">
+
+      <h3 class="text-center">Step 3</h3>
+
+      <fieldset class="form-group">
+        <label for="dataFile">Enter identifying name for data</label>
+        <input type="text" class="form-control"
+              required
+              placeholder="Enter data file name"
+              ng-model="formData.dataName"
+              ng-change="checkSaveName()">
+        <small class="text-muted">All files are saved with date, time, and protocol information.</small>
+      </fieldset>
+
+    </div>
+
+    <div class="col-sm-3 col-sm-offset-1">
+      <button class="btn btn-block btn-info">
+        <a ui-sref="collect.device">
+          Configure protocol
+          <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        </a>
+      </button>
+      <br />
+    </div>
+
+    <div class="col-sm-6 col-sm-offset-1">
+      <button class="btn btn-block btn-info" ng-disabled="showSubmit" ui-sref="collect.complete">
+          Collect data
+          <span class="glyphicon glyphicon-circle-arrow-right" disabled="showStep2"></span>
+      </button>
+      <br />
+    </div>
+
+</div>
+<br />

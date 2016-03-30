@@ -23,31 +23,31 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.css">
     <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
+    <link rel="stylesheet" href="css/custom.css">
 
 
     <!-- import js dependencies-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="node_modules/angular/angular.js"></script>
-    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="js/ui-bootstrap-tpls-1.2.5.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/ng-table/dist/ng-table.min.js"></script>
     <script src="bower_components/d3/d3.min.js"></script>
     <script src="bower_components/nvd3/build/nv.d3.min.js"></script> <!-- or use another assembly -->
     <script src="bower_components/angular-nvd3/dist/angular-nvd3.min.js"></script>
-
-
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
 
     <!-- Our Website Javascripts -->
     <script src="js/services/experiments.js"></script>
-    <script src="js/services/hardware_info.js"></script>
-    <script src="js/services/software_info.js"></script>
     <script src="js/directives/table_pagination_filter.js"></script>
-    <script src="js/config/routeConfig.js"></script>
+    <script src="js/config/routerConfig.js"></script>
     <script src="js/controllers/collect.js"></script>
     <script src="js/controllers/analyze.js"></script>
     <script src="js/controllers/tabs.js"></script>
     <script src="js/controllers/info.js"></script>
+
 
 
 </head>
@@ -59,8 +59,10 @@
 
 <!-- Our Website Content Goes Here -->
 <div ng-include='"templates/header.html"'></div>
-<br /> <br />
-<div ng-view></div>
+<br /> <br /> <br />
+<div class="col-sm-10 col-sm-offset-1"
+  <div ui-view></div>
+</div>
 <br /> <br />
 <div ng-include='"templates/footer.html"'></div>
 

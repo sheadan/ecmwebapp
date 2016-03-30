@@ -1,11 +1,13 @@
 // js/controllers/main.js
-angular.module('collectFormController', [])
+angular.module('collectFormController', ['ngAnimate'])
 
     // inject the experiment service factory into controller
-    .controller('collectController', function($scope, $http, Experiments) {
-        $scope.ShowStep2 = false;
-        $scope.ShowStep3 = false;
-        $scope.ShowSubmit = false;
+    .controller('collectController', function($scope, $http, Experiments, $state) {
+        $scope.showStep2 = false;
+        $scope.showStep3 = false;
+        $scope.showSubmit = false;
+
+        $scope.go = $state.go.bind($state);
 
         $scope.formData = {
           device : "",
@@ -23,32 +25,36 @@ angular.module('collectFormController', [])
 
         $scope.checkDevice = function() {
           if ($scope.formData.device  === "dev1" ) {
-              $scope.ShowStep2 = true;
+              $scope.showStep2 = true;
           }
           else {
-            $scope.ShowStep2 = false;
-            $scope.ShowStep3 = false;
-            $scope.ShowSubmit = false;
+            $scope.showStep2 = false;
+            $scope.showStep3 = false;
+            $scope.showSubmit = false;
           }
+        };
+
+        $scope.checkDevStep = function() {
+          return $scope.showStep2;
         };
 
 
         $scope.checkProtocol = function() {
           if ( $scope.formData.protocol  === "cv" ) {
-              $scope.ShowStep3=true;
+              $scope.showStep3=true;
             }
           else {
-            $scope.ShowStep3 = false;
-            $scope.ShowSubmit = false;
+            $scope.showStep3 = false;
+            $scope.showSubmit = false;
           }
         };
 
         $scope.checkSaveName = function() {
           if ( $scope.formData.dataName  !== "" ) {
-              $scope.ShowSubmit=true;
+              $scope.showSubmit=true ;
             }
           else {
-              $scope.ShowSubmit = false;
+              $scope.showSubmit = false;
           }
         };
 
@@ -89,5 +95,4 @@ angular.module('collectFormController', [])
                     });
             }
         };
-
     });

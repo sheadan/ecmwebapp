@@ -1,6 +1,6 @@
 <div class="row">
 
-  <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+  <div class="form-group has-warning has-feedback col-sm-5 col-sm-offset-1">
       <label class="control-label" for="startV">Starting Potential:</label>
       <div class="input-group">
         <input class="form-control" placeholder="0" type="number" id="startV" value="" ng-model="formData.params.startV" />
@@ -8,10 +8,15 @@
       </div>
     </div>
 
-    <div class="form-group has-warning has-feedback col-sm-4">
+    <div class="form-group has-warning has-feedback col-sm-5">
       <label class="control-label" for="maxV">Max Potential:</label>
       <div class="input-group">
-        <input class="form-control" type="text" placeholder="-5V to +5V" id="maxV" value="" ng-model="formData.params.maxV" />
+        <input class="form-control"
+                type="text"
+                placeholder="-5V to +5V"
+                id="maxV"
+                value=""
+                ng-model="formData.params.maxV" />
         <span class="input-group-addon">Volts</span>
       </div>
     </div>
@@ -20,7 +25,7 @@
 
   <div class="row">
 
-    <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+    <div class="form-group has-warning has-feedback col-sm-5 col-sm-offset-1">
       <label class="control-label" for="minV">Min Potential:</label>
       <div class="input-group">
         <input class="form-control" type="text" placeholder="-5V to +5V" id="minV" value="" ng-model="formData.params.minV" />
@@ -28,7 +33,7 @@
       </div>
     </div>
 
-    <div class="form-group has-warning has-feedback col-sm-4">
+    <div class="form-group has-warning has-feedback col-sm-5">
       <label class="control-label" for="rate">Sweep Rate:</label>
       <div class="input-group">
         <input class="form-control" type="text" placeholder="0.001-10" id="rate" value="" ng-model="formData.params.sweepRate" />
@@ -40,15 +45,22 @@
 
   <div class="row">
 
-    <div class="form-group has-warning has-feedback col-sm-4 col-sm-offset-2">
+    <div class="form-group has-warning has-feedback col-sm-5 col-sm-offset-1">
     <label class="control-label" for="numCycles">Number of Cycles:</label>
       <div class="input-group">
-        <input class="form-control" type="number" placeholder="1" id="numCycles" value="" ng-model="formData.params.cycles" />
+        <input class="form-control" type="number"
+              placeholder="1"
+              id="numCycles"
+              tooltip-class="lead"
+              tooltip-placement="bottom-left"
+              uib-tooltip="Pro Tip: Scan will repeat this many times."
+              value=""
+              ng-model="formData.params.cycles" />
         <span class="input-group-addon">Cycles</span>
       </div>
     </div>
 
-    <div class="form-group has-warning has-feedback col-sm-4">
+    <div class="form-group has-warning has-feedback col-sm-5">
     <label class="control-label" for="rate">Sample Rate:</label>
       <div class="input-group">
         <input class="form-control" type="text" placeholder="0.1-1000" id="rate" value="" ng-model="formData.params.sampleRate" />
@@ -58,3 +70,5 @@
 
   </div>
 </div>
+
+<br />

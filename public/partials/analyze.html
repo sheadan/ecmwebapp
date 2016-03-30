@@ -1,32 +1,30 @@
-<div class="container" ng-controller="analysisCtrlr">
+<br />
 
-      <!-- Tab navigation for analyzer
-        not a huge fan of this but OK for now...
-         -->
+<div ng-controller="analysisCtrlr">
 
-      <div class="row">
-        <section ng-controller="TabController as tabAD">
-            <ul class="nav nav-pills">
-              <li ng-class="{ active:tabAD.isSet(1) }">
-                <a href="" ng-click="tabAD.setTab(1)">Select Data Set</a>
-              </li>
-              <li ng-class="{ active:tabAD.isSet(2) }">
-                <a href="" ng-click="tabAD.setTab(2)">Data Analyzer</a>
-              </li>
-            </ul>
-            <br>
+  <div class="container-fluid">
 
+      <div id="form-container">
 
-    <!-- Data selection tab -->
-            <div ng-show="tabAD.isSet(1)" class="col-sm-8 col-sm-offset-2">
-              <div ng-include='"partials/analyze/selectData.html"'></div>
-            </div>
+          <div class="page-header text-center">
+              <h2>Analyze Data</h2>
 
-    <!-- Data analysis tab -->
-          <div ng-show="tabAD.isSet(2)"  class="col-sm-10 col-sm-offset-1">
-              <div ng-include='"partials/analyze/analyzeData.html"'></div>
+              <!-- the links to our nested states using relative paths -->
+              <!-- add the active class if the state matches our ui-sref -->
+              <div id="status-buttons" class="text-center">
+                  <a ui-sref-active="active" ui-sref=".select"><span>1</span> Select Dataset(s) </a>
+                  <a ui-sref-active="active" ui-sref=".plot"><span>2</span> Prepare Analysis </a>
+              </div>
           </div>
 
-        </section>
+          <!-- use ng-submit to catch the form submission and use our Angular function -->
+          <form id="signup-form" ng-submit="createExp()">
+
+              <!-- our nested state views will be injected here -->
+              <div ui-view></div>
+          </form>
+
       </div>
+  </div>
+
 </div>
