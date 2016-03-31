@@ -38,7 +38,7 @@ angular.module('PlotController', ['nvd3ChartDirectives'] )
           }
           else {
             $scope.selected_data = selectedExpt;
-            $scope.labels = selectedExpt.data.V;
+            $scope.labels = selectedExpt.data.t;
             $scope.data = [selectedExpt.data.I];
             $scope.series = ['Series A'];
             console.log("selected expt set to " + $scope.selected_data.name);
